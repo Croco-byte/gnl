@@ -6,13 +6,13 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 13:06:56 by user42            #+#    #+#             */
-/*   Updated: 2020/11/25 17:37:13 by user42           ###   ########.fr       */
+/*   Updated: 2020/11/25 17:41:10 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char		*line_from_save(char *save)
+char	*line_from_save(char *save)
 {
 	char	*line;
 	int		i;
@@ -32,7 +32,7 @@ char		*line_from_save(char *save)
 	return (line);
 }
 
-char		*update_save(char *save)
+char	*update_save(char *save)
 {
 	int		i;
 	int		k;
