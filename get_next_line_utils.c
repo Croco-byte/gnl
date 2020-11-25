@@ -6,13 +6,13 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 13:04:06 by user42            #+#    #+#             */
-/*   Updated: 2020/11/24 18:00:10 by user42           ###   ########.fr       */
+/*   Updated: 2020/11/25 13:31:26 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int		has_return(char *str)
+int			has_return(char *str)
 {
 	int		i;
 
@@ -40,7 +40,7 @@ size_t		ft_strlen(const char *str)
 	return (i);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char		*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	i;
 	size_t	k;
@@ -67,10 +67,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (result);
 }
 
-char	*line_from_save(char *save)
+char		*line_from_save(char *save)
 {
 	char	*line;
-	int 	i;
+	int		i;
 
 	i = 0;
 	while (save[i] && save[i] != '\n')
@@ -87,7 +87,7 @@ char	*line_from_save(char *save)
 	return (line);
 }
 
-char	*update_save(char *save)
+char		*update_save(char *save)
 {
 	int		i;
 	int		k;
