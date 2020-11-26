@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 13:04:06 by user42            #+#    #+#             */
-/*   Updated: 2020/11/26 12:12:52 by user42           ###   ########.fr       */
+/*   Updated: 2020/11/26 13:37:54 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,27 +65,19 @@ char		*ft_strjoin(char const *s1, char const *s2)
 	return (result);
 }
 
-char		*line_from_save(char *save)
+int			is_last_line(char *save, int *last_line, int i)
 {
-	char	*line;
-	int		i;
-
-	i = 0;
-	while (save[i] && save[i] != '\n')
-		i++;
-	if (!(line = malloc((i + 1) * sizeof(char))))
-		return (0);
-	i = 0;
-	while (save[i] && save[i] != '\n')
+	if (!save[i])
 	{
-		line[i] = save[i];
-		i++;
+		*last_line = 1;
+		free(save);
+		return (1);
 	}
-	line[i] = '\0';
-	return (line);
+	else
+		return (0);
 }
 
-char		*update_save(char *save)
+char		*update_save(char *save, int *last_line)
 {
 	int		i;
 	int		k;
@@ -93,17 +85,19 @@ char		*update_save(char *save)
 
 	i = 0;
 	k = 0;
+	if (!save)
+		return (0);
 	while (save[i] && save[i] != '\n')
 		i++;
-	if (!save[i])
+	if (is_last_line(save, last_line, i))
+		return (0);
+	else
+		i++;
+	if (!(new_save = malloc(((ft_strlen(save) - i) + 1) * sizeof(char))))
 	{
 		free(save);
 		return (0);
 	}
-	else
-		i++;
-	if (!(new_save = malloc(((ft_strlen(save) - i) + 1) * sizeof(char))))
-		return (0);
 	while (save[i])
 		new_save[k++] = save[i++];
 	new_save[k] = '\0';
