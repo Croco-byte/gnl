@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 13:04:33 by user42            #+#    #+#             */
-/*   Updated: 2020/11/25 17:41:15 by user42           ###   ########.fr       */
+/*   Updated: 2020/11/25 17:52:28 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ char	*line_from_save(char *save);
 char	*update_save(char *save);
 char	*fast_join(char const *s1, char const *s2);
 void	*ft_memmove(void *dest, const void *src, size_t n);
+char	*ft_strjoin(char const *s1, char const *s2);
 
 #endif
