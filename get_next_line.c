@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 13:06:56 by user42            #+#    #+#             */
-/*   Updated: 2020/11/26 14:12:00 by user42           ###   ########.fr       */
+/*   Updated: 2020/11/26 14:15:34 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int		get_next_line(int fd, char **line)
 		buff[reader] = '\0';
 		save = ft_strjoin(save, buff);
 	}
-	free (buff);
+	free(buff);
 	*line = line_from_save(save);
 	save = update_save(save, &last_line);
 	if (malloc_fails(line, save, &last_line))
